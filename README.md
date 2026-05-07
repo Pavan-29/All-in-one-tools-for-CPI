@@ -1,2 +1,2 @@
-# All-in-one-tools-for-CPI
-All the essentials tools required for SAP CPI integration developement.
+# All-in-one-tools
+All the essential tools for SAP CPI development

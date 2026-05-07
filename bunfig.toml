@@ -1,0 +1,2 @@
+[install]
+registry = "https://npm.ci.artifacts.walmart.com/artifactory/api/npm/npme-npm/"

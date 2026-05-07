@@ -1,0 +1,196 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  html,
+  body,
+  #root {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    @apply bg-slate-50 text-slate-900 font-sans antialiased;
+  }
+
+  body.dark {
+    @apply bg-navy-950 text-slate-100;
+  }
+
+  /* Custom scrollbars */
+  *::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    @apply bg-slate-300 rounded;
+  }
+
+  body.dark *::-webkit-scrollbar-thumb {
+    @apply bg-navy-700;
+  }
+
+  *::-webkit-scrollbar-thumb:hover {
+    @apply bg-slate-400;
+  }
+
+  body.dark *::-webkit-scrollbar-thumb:hover {
+    @apply bg-navy-600;
+  }
+}
+
+@layer components {
+  /* Tab pill - matches the screenshots */
+  .tab-pill {
+    @apply px-3 py-1.5 rounded-md text-sm font-medium transition-all duration-150;
+    @apply text-slate-600 hover:bg-slate-200/70 hover:text-slate-900;
+  }
+
+  body.dark .tab-pill {
+    @apply text-slate-300 hover:bg-navy-700/60 hover:text-white;
+  }
+
+  .tab-pill-active {
+    @apply bg-accent text-white shadow-md shadow-accent/20;
+  }
+
+  body.dark .tab-pill-active {
+    @apply bg-accent text-navy-950;
+  }
+
+  /* Card / panel */
+  .panel {
+    @apply rounded-xl border bg-white border-slate-200 shadow-sm;
+  }
+
+  body.dark .panel {
+    @apply bg-navy-900/60 border-navy-700/70 shadow-md shadow-black/20;
+  }
+
+  .panel-header {
+    @apply flex items-center justify-between px-4 py-2.5 border-b border-slate-200 text-xs font-semibold tracking-wider uppercase text-slate-500;
+  }
+
+  body.dark .panel-header {
+    @apply border-navy-700/70 text-slate-400;
+  }
+
+  /* Inputs */
+  .input,
+  .textarea,
+  .select {
+    @apply w-full rounded-md border bg-white border-slate-300 px-3 py-2 text-sm placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition;
+  }
+
+  body.dark .input,
+  body.dark .textarea,
+  body.dark .select {
+    @apply bg-navy-950/40 border-navy-700 text-slate-100 placeholder-slate-500;
+  }
+
+  .textarea {
+    @apply font-mono resize-none;
+  }
+
+  /* Buttons */
+  .btn {
+    @apply inline-flex items-center justify-center gap-1.5 rounded-md px-4 py-2 text-sm font-semibold transition focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-transparent disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-primary {
+    @apply btn bg-accent hover:bg-accent-dark text-white shadow-md shadow-accent/30 focus:ring-accent;
+  }
+
+  body.dark .btn-primary {
+    @apply text-navy-950;
+  }
+
+  .btn-secondary {
+    @apply btn bg-slate-200 hover:bg-slate-300 text-slate-700 focus:ring-slate-400;
+  }
+
+  body.dark .btn-secondary {
+    @apply bg-navy-700/80 hover:bg-navy-600 text-slate-100;
+  }
+
+  .btn-ghost {
+    @apply btn bg-transparent hover:bg-slate-200/70 text-slate-700 focus:ring-slate-400;
+  }
+
+  body.dark .btn-ghost {
+    @apply hover:bg-navy-700/70 text-slate-200;
+  }
+
+  .btn-danger {
+    @apply btn bg-rose-500 hover:bg-rose-600 text-white focus:ring-rose-500;
+  }
+
+  .icon-btn {
+    @apply inline-flex h-8 w-8 items-center justify-center rounded-md text-slate-500 hover:text-slate-900 hover:bg-slate-200/70 transition focus:outline-none focus:ring-2 focus:ring-accent;
+  }
+
+  body.dark .icon-btn {
+    @apply text-slate-400 hover:text-white hover:bg-navy-700/60;
+  }
+
+  /* Sidebar nav */
+  .nav-item {
+    @apply flex items-center gap-2.5 px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:bg-slate-200/60 hover:text-slate-900 transition;
+  }
+
+  body.dark .nav-item {
+    @apply text-slate-300 hover:bg-navy-800 hover:text-white;
+  }
+
+  .nav-item-active {
+    @apply bg-accent/10 text-accent-dark;
+  }
+
+  body.dark .nav-item-active {
+    @apply bg-accent/15 text-accent;
+  }
+
+  /* Code editor wrapper */
+  .code-area {
+    @apply font-mono text-[13px] leading-relaxed;
+  }
+
+  /* Diff highlighting */
+  .diff-add {
+    @apply bg-emerald-500/15 text-emerald-700;
+  }
+  body.dark .diff-add {
+    @apply text-emerald-300;
+  }
+  .diff-del {
+    @apply bg-rose-500/15 text-rose-700;
+  }
+  body.dark .diff-del {
+    @apply text-rose-300;
+  }
+  .diff-eq {
+    @apply text-slate-700;
+  }
+  body.dark .diff-eq {
+    @apply text-slate-300;
+  }
+
+  /* Pretty key/value rows for headers/properties tables */
+  .kv-row {
+    @apply grid grid-cols-[1fr_1fr_auto] gap-2 items-center;
+  }
+}
+
+/* Utilities */
+
